@@ -25,10 +25,10 @@
         We just like random interactivity in the site, including a fun effect if you hover over <span
             id="hover-this">        <b>this.</b></span>
     </p>
-    <p onmouseover="mouseOverFunction(this)">
+    <p onclick="mouseOnclickFunction(this)" id="lastParagraph">
         Another task: This should be another feature.
                 I want to click anywhere in this paragraph tag and I want to be able to change the background color to
-        whatever is in this input: <input type="text" />.
+        whatever is in thiiiiis input: <input id="lParagraph" type="text" />.
     </p>
     <script>
         document.getElementById("button").onclick = () => {
@@ -44,7 +44,11 @@
             setBackgroundColorById("body", "white");
         }
 
-        const getElementById = (id) => {
+        // const getElementById = (id) => {
+        //     return document.getElementById(id).value;
+        // };
+
+        const getValueFromId = (id) => {
             return document.getElementById(id).value;
         };
 
@@ -53,17 +57,19 @@
         // }
 
         const setBackgroundColorById = (id, color) => {
-            document.getElementById(id).style = "background-color: " + color;
-        }
+            document.getElementById(id).style = ("background-color: " + color)
+        };
 
 
         // function setBackgroundColorById(id, color) {
         //     document.getElementById(id).style = "background-color: " + color;
         // }
 
-        const mouseOverFunction = (el) => {
-            el.style = "background-color: black";
-        }
+        const mouseOnclickFunction = (el) => {  
+          
+           el.style="background-color:"+document.getElementById("lParagraph").value
+        };
+        
 
         // function mouseOverFunction(el) {
         //     el.style = "background-color: black";

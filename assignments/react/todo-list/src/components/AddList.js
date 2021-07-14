@@ -3,13 +3,14 @@ import { useState } from 'react';
 
 const AddList=(props)=>{
     const {tasks, setTasks} = props;
-    const [task, setTask] = useState({
-      name:"",
-      isCompleted:false
-    });
+    const [task, setTask] = useState();
     const onSubmitHandler=(event) =>{
         event.preventDefault();
-        setTasks([task,...tasks])
+        let newTask = {
+          name:task.name,
+          isCompleted: false
+        }
+        setTasks([...tasks, newTask])
     //    console.log(tasks);
   //      console.log("Single task " + task);
       }

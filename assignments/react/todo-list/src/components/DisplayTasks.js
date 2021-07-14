@@ -5,7 +5,7 @@ const DisplayTasks =(props) =>{
 
   const onClick =()=>{
       setTasks(()=>{
-          return tasks.filter(task=> tasks.indexOf(task)!==index)
+          return tasks.filter(chore=> tasks.indexOf(chore)!==index)
       });
 
   };

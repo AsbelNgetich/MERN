@@ -11,8 +11,6 @@ const AddList=(props)=>{
           isCompleted: false
         }
         setTasks([...tasks, newTask])
-    //    console.log(tasks);
-  //      console.log("Single task " + task);
       }
 
     const onChange = (event)=>{
@@ -20,7 +18,6 @@ const AddList=(props)=>{
         name: event.target.value,
         isCompleted: false
       })
-  //    console.log(task)
     }
 
 

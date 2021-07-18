@@ -12,7 +12,6 @@ function App() {
   const [categories, setCategories] = useState(["people","planets"])
   const[category, setCategory]= useState("")
   const [searchId, setSearchId]= useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [inputId,setInputId] = useState("")
   
 
@@ -28,7 +27,9 @@ function App() {
   }
 
   const onClickSearch =()=>{
+
     setSearchId(inputId)
+
   }
 
   const onSubmitSearch= (event)=> {
@@ -63,8 +64,8 @@ function App() {
     </form>
 
     <Router>
-        <People  path= "/people/:searchId" searchId={searchId} />
-        <Planets path="/planets/:searchId" searchId= {searchId}  />
+        <People  path= "/people/:searchId" />
+        <Planets path="/planets/:searchId"  />
     </Router>
 
      

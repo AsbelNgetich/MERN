@@ -63,7 +63,7 @@ const CreateQuote=()=>{
                 <label>Quoted on:</label>
                 <input  onChange= {changeHandler} type="date" name="quotedOn" id="" className="form-control" />
             </div>
-            <input type="submit" value="Upload Quote!" />
+            <input type="submit" value="Add Quote" />
         </form>
       </div>
     )

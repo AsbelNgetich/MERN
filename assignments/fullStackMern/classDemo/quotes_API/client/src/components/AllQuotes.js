@@ -35,8 +35,8 @@ const AllQuotes = () => {
     return (
         <div>
             <h2>All quotes</h2>
-            {Quotes.map(q=>{
-                return <div className="card">
+            {Quotes.map((q,idx)=>{
+                return <div key = {idx} className="card">
                 <div class="card-body">
                     <h4 class="card-title">{q.author}</h4>
                     <p class="card-text">
@@ -44,6 +44,7 @@ const AllQuotes = () => {
                     </p>
                     {/*<p>Quoted on this day:{q.quotedOn}</p>*/}
                     <Link to={`/quotes/info/${q._id}`} className="btn btn-primary m-2">More Info</Link>
+                    <Link to={`/quotes/edit/${q._id}`} className="btn btn-primary m-2">Edit</Link>
                     <button onClick={(e)=>deleteQuote(e, q._id)} className="btn btn-danger">Delete</button>
 
                 </div>

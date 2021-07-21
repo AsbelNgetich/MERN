@@ -28,11 +28,7 @@ const CreateProduct=()=>{
 
                 console.log("response below.......")
                 console.log(res)
-
-               
-                // if(res.data.results){
-                //     navigate("/")
-
+                
                 //if there are errors, stay on page and set the erros
                 if(res.data.error){
                     console.log("Please fill out the form correctly!")

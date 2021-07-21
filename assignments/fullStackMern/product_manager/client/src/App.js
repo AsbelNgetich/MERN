@@ -4,7 +4,7 @@ import AllProducts from './components/AllProducts';
 import {Link, Router} from "@reach/router"
 import CreateProduct from './components/CreateProduct';
 import ViewProduct from './components/ViewProduct';
-//import ProductDetal from './components/ProductDetail';
+import EditProduct from './components/EditProduct';
 
 function App() {
   return (
@@ -15,6 +15,8 @@ function App() {
         <CreateProduct path="/quotes/new"/>
         <AllProducts path="/"/>
         <ViewProduct path="/:id"/>
+        <EditProduct path="/:id/edit"/>
+        
         
        {/* <ProductDetail path="/quotes/info/:id"/> */}
       </Router>

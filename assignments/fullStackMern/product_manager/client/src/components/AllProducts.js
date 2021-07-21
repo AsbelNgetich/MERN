@@ -37,11 +37,12 @@ const AllProducts = () => {
     return (
         <div>
             <h2>All products</h2>
-            {Products.map(p=>{
-                return <div >
-                    <div>
+            {Products.map((p, idx)=>{
+                return <div key={idx} >
+                    <div >
                         
-                        <Link to={`/${p._id}`} >{p.title} </Link>
+                        <Link to={`/${p._id}`} >{p.title}</Link>
+                        <Link to={`/${p._id}/edit`} className="btn btn-primary btn-sm m-3">Edit</Link>
                         <button onClick={(e)=>deleteProduct(e, p._id)} className="btn btn-danger btn-sm">Delete</button>
                     </div>
             </div>

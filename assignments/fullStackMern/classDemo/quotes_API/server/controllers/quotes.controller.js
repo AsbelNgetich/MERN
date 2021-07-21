@@ -42,11 +42,23 @@ module.exports.updateQuote = (req,res)=>{
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.deleteAnExistingQuote = (req, res) => {
-    Quote.deleteOne({ _id: req.params.id })
-        .then(result => res.json({ result: result }))
-        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+// module.exports.deleteQuote = (req, res) => {
+//     Quote.deleteOne({ _id: req.params.id })
+//     .then(result => res.json({ result: result }))
+//     .catch(err => res.json({ message: 'Something went wrong', error: err }));
+// }
+
+module.exports.deleteQuote = (req, res)=>{
+    Quote.deleteOne({_id: req.params.quoteId})
+        .then(deletedQuote=> res.json({results: deletedQuote}))
+        .catch(err => {
+            res.json(
+                {message: "something went wrong deleting one quote", error: err}
+                )
+        })
 }
+
+
 module.exports.findRandomQuote =(req,res)=>{
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);

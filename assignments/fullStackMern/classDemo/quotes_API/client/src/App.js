@@ -2,6 +2,7 @@ import './App.css';
 import AllQuotes from './components/AllQuotes';
 import {Link, Router} from "@reach/router"
 import CreateQuote from './components/CreateQuote';
+import QuoteInfo from './components/QuoteInfo';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <AllQuotes path="/"/>
         <CreateQuote path="/quotes/new"/>
+        <QuoteInfo path="/quotes/info/:id"/>
       </Router>
     </div>
   );

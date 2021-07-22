@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {navigate} from "@reach/router";
+import AllProducts from './AllProducts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CreateProduct=()=>{
@@ -65,6 +66,7 @@ const CreateProduct=()=>{
             </div>
             <input type="submit" value="Create" />
         </form>
+        <AllProducts path="/"/>
       </div>
     )
 

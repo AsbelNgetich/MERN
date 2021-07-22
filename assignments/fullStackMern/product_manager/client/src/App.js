@@ -21,7 +21,7 @@ function App() {
        {/* <ProductDetail path="/quotes/info/:id"/> */}
       </Router>
     </div>
-  );
+  )
 }
 
 export default App;

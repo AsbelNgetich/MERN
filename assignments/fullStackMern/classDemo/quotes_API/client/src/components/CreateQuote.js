@@ -7,17 +7,29 @@ const CreateQuote=()=>{
     const [formInfo, setFormInfo] = useState({
         content:"",
         author:"",
-        quotedOn:""
+        quotedOn:"",
+        isMotivational:false
     })
 
     const [formErrors, setFormErrors] = useState({})
 
     //handles the changes in the input
     const changeHandler = (e)=>{
-        setFormInfo({
-            ...formInfo,
-            [e.target.name]:e.target.value
-        })
+       
+        console.log(e.target.name)
+        console.log(e.target.value)
+        if(e.target.type == "checkbox"){
+            setFormInfo({
+                ...formInfo,
+                [e.target.name]:e.target.checked
+            })
+        }else{
+            setFormInfo({
+                ...formInfo,
+                [e.target.name]:e.target.value
+            })
+
+        }
     }
 
     //handles the form
@@ -63,6 +75,13 @@ const CreateQuote=()=>{
                 <label>Quoted on:</label>
                 <input  onChange= {changeHandler} type="date" name="quotedOn" id="" className="form-control" />
             </div>
+
+            <div className="form-group">
+                <label>Is Motivational?</label>
+                <input onChange = {changeHandler} type="checkbox" name="isMotivational" id="" />
+            </div>
+           
+
             <input type="submit" value="Add Quote" />
         </form>
       </div>

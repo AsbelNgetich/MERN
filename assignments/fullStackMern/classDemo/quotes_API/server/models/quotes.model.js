@@ -15,7 +15,19 @@ const QuoteSchema = new mongoose.Schema({
 
     quotedOn: {
         type: Date,
+    },
+
+     isMotivational:{
+        type: Boolean
+    },
+
+    popularityLevel:{
+        type:Number,
+        max:[10, "Quote can't be rated higher than 10"],
+        min:[1, "Quote can't be rated less than 1"]
     }
+
+
 }, {timestamps:true});
 
 const Quote = mongoose.model("Quote", QuoteSchema)
